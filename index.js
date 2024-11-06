@@ -62,13 +62,16 @@ function createTask() {
 function doneTask(target) {
     
     const task = target.closest('.main__list-item')
-    task.remove( )
-        const html = `<div class="resolved__tasks-list tasks-list">
+    task.remove()
+
+        const taskComponent = /*html*/
+        `
             <div class="main__list-item">
               <p>Выполненная задача</p>
               <div class="important">
                 <svg
                   class="cross-err-btn"
+                  onclick='deleteTask(this)'
                   width="800px"
                   height="800px"
                   viewBox="0 0 24 24"
@@ -79,8 +82,10 @@ function doneTask(target) {
                 </svg>
               </div>
             </div>
-          </div> `
-   
+           `
+
+    resolveTaskList.insertAdjacentHTML('beforeend', taskComponent)
+   //логика
 }
 
 function deleteTask(target) {
