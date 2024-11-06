@@ -2,8 +2,8 @@ const createTaskBtn = document.querySelector(".create-task-btn");
 const createTaskInput = document.querySelector(".create-task-input");
 
 //Кнопки для взаимодействия с задачей
-const crossErrBtn = document.querySelector(".cross-err-btn");
-const starImportantBtn = document.querySelector(".star-important");
+const crossErrBtn = document.querySelectorAll(".cross-err-btn");
+const starImportantBtn = document.querySelectorAll(".star-important");
 const doneBtn = document.querySelectorAll(".done-btn");
 
 const clearBtn = document.querySelector(".header__clear-btn");
@@ -87,4 +87,13 @@ starImportantBtn.forEach(element => {
     element.addEventListener('click', makeImportantTask)
 })
 
+
+clearBtn.addEventListener('click', () => {
+    const allTasks = document.querySelectorAll('.main__list-item')
+    allTasks.forEach(element => {
+        element.remove()
+    })
+
+    //логика работы с данными
+})
 
